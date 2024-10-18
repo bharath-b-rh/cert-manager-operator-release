@@ -8,11 +8,11 @@ COPY --chmod=0550 hack/bundle/render_templates.sh /render_templates.sh
 
 # Below image versions are used for replacing the image references in the operator CSV.
 # For image builds through konflux, konflux-bot will update the references.
-ARG CERT_MANAGER_OPERATOR_IMAGE=registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:ae920b93103c45444f32c9686e0f090137a7076a8cf4ed8e86b3173b1487e402 \
-    CERT_MANAGER_WEBHOOK_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:7528e0e0c2a913af856fefb59d0103d0445c8269f90ee9ea99dc921bc2123eba \
-    CERT_MANAGER_CA_INJECTOR_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:7528e0e0c2a913af856fefb59d0103d0445c8269f90ee9ea99dc921bc2123eba \
-    CERT_MANAGER_CONTROLLER_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:7528e0e0c2a913af856fefb59d0103d0445c8269f90ee9ea99dc921bc2123eba \
-    CERT_MANAGER_ACMESOLVER_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:2411c83dc032195c29ad35aa8d887fa9da9db1376eb8247f2607e6bde6568554 \
+ARG CERT_MANAGER_OPERATOR_IMAGE=registry.redhat.io/cert-manager/cert-manager-operator-rhel9@sha256:2df1899f8c9f877cb9e1239b860f34c0e7a27d72d87b561fa79a5d7319699d59 \
+    CERT_MANAGER_WEBHOOK_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:f840f470c8b6c235cfd58ccb6a73a057544a64d29b9074918667ca284c8b68a5 \
+    CERT_MANAGER_CA_INJECTOR_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:f840f470c8b6c235cfd58ccb6a73a057544a64d29b9074918667ca284c8b68a5 \
+    CERT_MANAGER_CONTROLLER_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-rhel9@sha256:f840f470c8b6c235cfd58ccb6a73a057544a64d29b9074918667ca284c8b68a5 \
+    CERT_MANAGER_ACMESOLVER_IMAGE=registry.redhat.io/cert-manager/jetstack-cert-manager-acmesolver-rhel9@sha256:9f185dca969322dae0806b3f201fb2fdb43924a70eaa16e2d543355da0b4efbe \
     KUBE_RBAC_PROXY_IMAGE=registry.redhat.io/openshift4/ose-kube-rbac-proxy-rhel9@sha256:6fbeaf03058bb5d6e9e3311a7afe67666e0770532c978b6b57e77ea2851cb085
 
 RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq

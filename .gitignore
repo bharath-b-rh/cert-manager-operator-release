@@ -1,1 +1,6 @@
 bin
+
+# ignore git submodules which are not created in main branch
+cert-manager-istio-csr/
+cert-manager-operator/
+cert-manager/
